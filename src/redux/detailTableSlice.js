@@ -3,9 +3,7 @@ import axios from "axios";
 
 export const fetchItems = createAsyncThunk("items/fetchItems", async () => {
   try {
-    const CORS_PROXY_URL = 'https://crossorigin.me/';
-    const API_URL = `${CORS_PROXY_URL}http://5.189.180.8:8010/item`;
-    const response = await axios.get(API_URL);
+    const response = await axios.get('//5.189.180.8:8010/item')
     return response.data;
   } catch (err) {
     throw Error("Failed to fetch items from data base");
